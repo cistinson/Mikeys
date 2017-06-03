@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Welcome to Mikey's!</title>
+    <link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Black+Ops+One" rel="stylesheet">
+
+    <style>
+      
+      #carousel {
+        width: 1500px;
+        overflow:	hidden;
+        margin: auto;
+      }
+
+      #carousel ul {
+        width:7500px;
+        padding:0;
+        margin:0;
+      }
+
+      #carousel ul li {
+        width:1500px;
+        text-align:	center;
+        list-style:	none;
+        float:	left;
+      }
+      
+      button.accordion {
+          background-color: black;
+          color: #ffffff;
+          cursor: pointer;
+          padding: 1rem;
+          width: 100%;
+          border: none;
+          text-align: left;
+          outline: none;
+          font-size: 1.5rem;
+          transition: 0.4s;
+          margin-bottom: 0.25rem;
+      }
+
+      button.accordion.active, button.accordion:hover {
+          background-color: #35b729;
+      }
+
+     button.accordion:after {
+        content: '\002B';
+        color: #ffffff;
+        float: right;
+      }
+
+      button.accordion.active:after {
+          content: "\2212";
+      }
+      
+      button i{
+        padding-right: 0.7rem;
+      }
+      
+      div.panel {
+          padding: 0 0.5rem;
+          background-color: white;
+          max-height: 0;
+          overflow: hidden;
+          transition: max-height 0.2s ease-out;
+      }
+      
+      #logo{
+        max-width: 100%;
+        height:12rem;
+      }
+      
+      #bodyDiv{
+        background-color:#ffffff;
+        background-image: url("background.jpg");
+        padding: 0 8rem;
+        font-family: 'Righteous', cursive;
+      }
+      
+      header{
+        text-align: center;
+        padding-top: 1rem;
+      }
+      
+      body{
+        background-color: #333333;
+        padding: 0 5rem;
+        margin:auto;
+      }
+      
+      #menuTable td{
+        width: 100%;
+        padding: 1rem 0.5rem 0 0.5rem;
+      }
+      
+      #menuTable h2{
+        border-bottom: solid black 2px;
+      }
+      
+      footer{
+        text-align: center;
+        padding:0.5rem 0;
+        font-size:0.9rem;
+        border-top: 2px solid black;        
+      }
+      
+      footer i{
+        padding: 0 0.5rem;
+        color:black;
+      }
+      
+      h1{
+        font-family: 'Black Ops One', cursive;
+        font-size: 8rem;
+        margin: 0;
+        text-align: center;
+        padding: 1rem 0 0 0;
+        text-shadow: 3px 3px #35b729;
+        line-height: 7rem;
+      }
+      
+      h3, h2{
+        margin: 0;
+      }
+      
+      h2{
+        text-align: center;
+        padding: 0.5rem 0;
+      }
+      
+      .menuDescription{
+        padding-top: 0 !important;
+      }
+      
+      #pictureTable img{
+        max-width: 100%;
+      }
+      
+      #pictureTable td{
+        width: 33%;
+        padding: 0.25rem;
+      }
+      
+      .imagePanel{
+        margin: auto
+          ;
+      }
+      
+      .imagePanel img{
+        width: 32.5%;
+        margin: 0.1rem;
+        display: inline-block;
+      }
+      
+      iframe{
+        margin: auto;
+      }
+      
+      input[type=text], select, textarea {
+          width: 100%; 
+          padding: 0.4rem; 
+          border: 1px solid #ccc; 
+          border-radius: 4px; 
+          box-sizing: border-box; 
+          margin-top: 0.5rem; 
+          margin-bottom: 1rem;
+          resize: vertical;
+      }
+
+      input[type=submit] {
+          color: black;
+          padding: 12px 20px;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+      }
+      
+      input[type=submit]:hover{
+        background-color: #35b729;
+        color:#ffffff;
+      }
+      
+      iframe{
+        width:48%;
+        float:left;
+        padding: 0.2rem;
+        margin-bottom: 0.5rem;
+      }
+            
+      #contactForm{
+        width: 48%;
+        float: left;
+        padding: 0.2rem;
+      }
+      
+      .contactPanel{
+        align-content: space-between;
+      }
+      
+      #themes{
+        text-align: center;
+        padding: 1rem;
+      }
+      
+      #themes button{
+        padding: 0.75rem;
+        font-family: 'Righteous', cursive;
+        border-radius: 0.2rem;
+      }
+      
+      #WinterTheme{
+        background-color: floralwhite;
+      }
+      
+      #SpringTheme{
+        background-color: lightgreen;
+      }
+      
+      #SummerTheme{
+        background-color: yellow;
+      }
+      
+      #FallTheme{
+        background-color: darkorange;
+      }
+      
+      #Reset{
+        background-color: #999999;
+      }
+      
+      
+      @media only screen and (max-width: 1200px) {
+        #bodyDiv{
+          background-color:#ffffff;
+          background-image: url("background.jpg");
+          padding: 0 2rem;
+          font-family: 'Righteous', cursive;
+         }
+       }
+      
+      @media only screen and (max-width: 980px) and (min-width: 550px) {
+        .imagePanel img{
+          width: 49%;
+          margin: 0.1rem;
+          display: inline-block;
+        }
+        
+        iframe{
+          width:100%;
+          clear: both;
+          padding: 0.2rem;
+        }
+
+        #contactForm{
+          width: 100%;
+          clear: both;
+          padding: 0.2rem;
+        }          
+      } 
+      
+      @media only screen and (max-width: 550px) and (min-width: 100px) {
+        .imagePanel img{
+          width: 99%;
+          margin: 0;
+          display: inline-block;
+        }      
+       }       
+      }
+      
+    </style>
+  </head>
+<body>
+  <div id="bodyDiv">
+    <h1>MIKEY'S GYROS</h1>
+    
+    <div id="themes">
+      <button id="WinterTheme" class="Themes">Winter</button>
+      <button id="SpringTheme" class="Themes">Spring</button>
+      <button id="SummerTheme" class="Themes">Summer</button>
+      <button id="FallTheme" class="Themes">Fall</button>
+      <button id="Reset" class="Themes">Reset</button>
+    </div>
+    
+    <div data-slider-id="gsxlrh"></div>
+    
+    <p>We started Mikey's in Moscow, ID in 1995.  Since then our priority has always been to provide our customers with high quality, fresh and healthy food, served in a fast and friendly manner – offered at a competitive price point.  Our menu selections reflect the authentic Mediterranean food with a relaxed atmosphere which has made us favorite with the local residents. We hope you’ll join us for lunch or dinner and become part of our family.</p>
+
+    <button class="accordion"><i class="fa fa-cutlery" aria-hidden="true"></i>Menu</button>
+    <div class="panel">
+      <table id="menuTable">
+        <tr>
+          <td colspan="2"><h2>Sandwiches</h2></td>
+        </tr>          
+        <tr>
+          <td><h3>Gyro on Pita</h3></td>
+          <td>$7.45</td>
+        </tr>
+        <tr>
+          <td colspan="2" class="menuDescription">Flame-broiled, seasoned gyro meat, lettuce, tomato, onion &amp; Tzatziki.</td>
+        </tr> 
+        <tr>
+          <td><h3>Chicken Kebab on Pita</h3></td>
+          <td>$7.45</td>
+        </tr>
+        <tr>
+          <td colspan="2" class="menuDescription">Charbroiled, house marinated chicken breast, lettuce, tomato, onion &amp; Tzatziki.</td>
+        </tr> 
+        <tr>
+          <td><h3>Fish Gyro</h3></td>
+          <td>$8.99</td>
+        </tr>
+        <tr>
+          <td colspan="2" class="menuDescription">Fish of the day with lettuce, tomato, onion &amp; red cabbage.</td>
+        </tr> 
+        <tr>
+          <td><h3>Olive Tree Vegetarian Special Gyro</h3></td>
+          <td>$7.99</td>
+        </tr>
+        <tr>
+          <td colspan="2" class="menuDescription">Basil pesto, hummus, feta, cucumber, tomato, onion, sun dried tomato &amp; lettuce.</td>
+        </tr> 
+        <tr>
+          <td><h3>Avocado Chicken Shawarma</h3></td>
+          <td>$7.99</td>
+        </tr>
+        <tr>
+          <td colspan="2" class="menuDescription">Flame-broiled, house marinated Chicken, tomato, onion, avocado, sun dried tomato, lettuce &amp; Tzatziki.</td>
+        </tr> 
+        <tr>
+          <td><h3>Basil Pesto Chicken Shawarma</h3></td>
+          <td>$7.99</td>
+        </tr>
+        <tr>
+          <td colspan="2" class="menuDescription">Flame-broiled, house marinated Chicken, basil pesto, tomato, onion, sun dried tomato, lettuce &amp; Tzatziki.</td>
+        </tr> 
+        <tr>
+          <td><h3>Vegan Delight</h3></td>
+          <td>$7.50</td>
+        </tr>
+        <tr>
+          <td colspan="2" class="menuDescription">Hummus, avocado, sun-dried tomatoes, roasted red pepper, tomato, onion, cucumber &amp; lettuce.</td>
+        </tr> 
+        <tr>
+          <td><h3>Greek Village Gyro</h3></td>
+          <td>$8.50</td>
+        </tr>
+        <tr>
+          <td colspan="2" class="menuDescription">Flame-broiled, seasoned gyro meat, fries, tomato, onion, feta, cayenne pepper &amp; Tzatziki.</td>
+        </tr>
+        <tr>
+          <td colspan="2"><h2>Dinner Plates</h2></td>
+        </tr>          
+        <tr>
+          <td><h3>Gyro Platter</h3></td>
+          <td>$11.99</td>
+        </tr>
+        <tr>
+          <td colspan="2" class="menuDescription">This platter includes bryani rice, greek salad, hummus, potatoes, tzatziki sauce and pita bread.</td>
+        </tr>           
+        <tr>
+          <td><h3>Chicken &amp; Gyro Platter</h3></td>
+          <td>$12.99</td>
+        </tr>
+        <tr>
+          <td colspan="2" class="menuDescription">This platter includes byrani rice, greek salad, hummus, potatoes, tzatziki sauce and pita bread.</td>
+        </tr>  
+          
+        <tr>
+          <td><h3>Shish Kebab Platter</h3></td>
+          <td>$13.99</td>
+        </tr>
+        <tr>
+          <td colspan="2" class="menuDescription">This platter includes byrani rice, greek salad, hummus, potatoes, tzatziki sauce and pita bread.</td>
+        </tr>            
+        <tr>
+          <td><h3>Salmon Platter</h3></td>
+          <td>$14.99</td>
+        </tr>
+        <tr>
+          <td colspan="2" class="menuDescription">This platter includes byrani rice, greek salad, hummus, potatoes, tzatziki sauce and pita bread.</td>
+        </tr>              
+        <tr>
+          <td><h3>Shrimp Platter</h3></td>
+          <td>$13.99</td>
+        </tr>
+        <tr>
+          <td colspan="2" class="menuDescription">This platter includes byrani rice, greek salad, hummus, potatoes, tzatziki sauce and pita bread.</td>
+        </tr>
+        <tr>
+          <td colspan="2"><h2>Desserts</h2></td>
+        </tr>           
+        <tr>
+          <td><h3>Baklava</h3></td>
+          <td>$4.00</td>
+        </tr>
+        <tr>
+          <td colspan="2" class="menuDescription">Chopped walnuts and almonds layered then soaked in sweet honey syrup.</td>
+        </tr>
+        <tr>
+          <td><h3>Baklava a la Mode</h3></td>
+          <td>$5.00</td>
+        </tr>
+        <tr>
+          <td colspan="2" class="menuDescription">Delicious classic baklava served over vanilla or strawberry ice cream.</td>
+        </tr>
+        <tr>
+          <td><h3>Cheesecake</h3></td>
+          <td>$3.00</td>
+        </tr>
+        <tr>
+          <td colspan="2" class="menuDescription">Strawberry or chocolate cheescake.</td>
+        </tr>          
+        <tr>
+          <td colspan="2"><h2>Drinks</h2></td>
+        </tr>          
+        <tr>
+          <td><h3>Soft Drinks</h3></td>
+          <td>$2.19</td>
+        </tr>
+        <tr>
+          <td colspan="2" class="menuDescription">Pepsi, Diet Pepsi, Dr. Pepper, Mountain Dew, Sierra Mist, Orange Crush</td>
+        </tr>  
+        <tr>
+          <td><h3>Fruit Juices</h3></td>
+          <td>$3.50</td>
+        </tr>
+        <tr>
+          <td colspan="2" class="menuDescription">Apple, Cranberry, Orange, Mango, Grapefruit, Pomegranate</td>
+        </tr> 
+        <tr>
+          <td><h3>Greek Coffee</h3></td>
+          <td>$3.50</td>
+        </tr>
+        <tr>
+          <td colspan="2" class="menuDescription">Plain or cardamom</td>
+        </tr>      
+      </table><br />
+    </div>
+
+    <button class="accordion"><i class="fa fa-camera" aria-hidden="true"></i>Pictures</button>
+    <div class="panel imagePanel">
+      <img src="Other%20Images/gyro.jpg"/>
+      <img src="Other%20Images/kebabs.jpg"/>
+      <img src="Other%20Images/Plate.jpg"/>
+      <img src="Other%20Images/sauce.jpg"/>
+      <img src="Other%20Images/Platter.jpg"/>
+      <img src="Other%20Images/wrap.jpg"/>
+      <img src="Other%20Images/baklava.jpg"/>
+      <img src="Other%20Images/cheesecake.jpg"/>
+      <img src="Other%20Images/coffee.jpg"/>      
+    </div>
+
+    <button class="accordion"><i class="fa fa-question-circle" aria-hidden="true"></i>Contact Us</button>
+    <div class="panel contactPanel">
+        <h2>Contact Us:</h2>
+        <form id="contactForm">
+          <label>Name</label><br />
+          <input type="text" name="firstname" placeholder="Name....">
+
+          <label>Email Address</label>
+          <input type="text" name="email" placeholder="Email....">
+
+          <label>Phone Number</label>
+          <input type="text" name="phone" placeholder="Phone number....">
+
+          <label>Comments or Quesitons</label>
+          <textarea name="comments" placeholder="Comments..."></textarea>
+
+          <input type="submit" value="Submit">
+        </form>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1149.8265702035053!2d-117.0017506782409!3d46.73011859953965!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x3f3704f4695cbb3b!2sMikey&#39;s+Greek+Gyros!5e0!3m2!1sen!2sus!4v1494120848181" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>      
+    </div>
+    
+    <footer>
+          <a href="https://www.facebook.com/Mikeys-Gyros-244543068060/" target="_blank"><i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i></a>
+          <a href="https://www.yelp.com/biz/mikeys-greek-gyros-moscow" target="_blank"><i class="fa fa-yelp fa-2x" aria-hidden="true"></i></a>
+          <a href="http://www.imgrum.org/place/mikey-s-gyros/9125319" target="_blank"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a>
+          <p>(208)-882-0780 <br />527 S Main St Moscow, ID 83843</p>
+          <p>&copy; 2017 Stinson Design</p>
+    </footer>
+    
+</div>
+
+<script type="text/javascript" src="http://app.sliderui.com/sliders/gsxlrh.js"></script>
+<script src="https://use.fontawesome.com/0aebed106c.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  
+<script>
+  
+  $(document).ready(function() {
+    
+
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+
+    for (i = 0; i < acc.length; i++) {
+      acc[i].onclick = function() {
+        this.classList.toggle("active");
+        var panel = this.nextElementSibling;
+        if (panel.style.maxHeight){
+          panel.style.maxHeight = null;
+        } else {
+          panel.style.maxHeight = panel.scrollHeight + "px";
+        } 
+      }
+    };  
+
+      $("#WinterTheme").click(function() {
+          $("body").css("background-color","#23568f "); 
+          $("h1").css({
+            "color" : "#0d193b", 
+            "text-shadow" : "3px 3px #f8e4ff"
+          });
+          $(".accordion").css({
+            "background-color" : "#0d193b",
+            "color" : "#ffffff"
+          });
+      });
+    
+      $("#SpringTheme").click(function() {
+          $("body").css("background-color","#00FF7F"); 
+          $("h1").css({
+            "color" : "#006632", 
+            "text-shadow" : "3px 3px #CCFFE5"
+          });
+          $(".accordion").css({
+            "background-color" : "#E6E6FF",
+            "color" : "black"
+          });
+      });
+    
+      $("#SummerTheme").click(function() {
+          $("body").css("background-color","#f5f686"); 
+          $("h1").css({
+            "color" : "#ffb400", 
+            "text-shadow" : "3px 3px pink"
+          });
+          $(".accordion").css({
+            "background-color" : "#ffff3f",
+            "color" : "black"
+          });
+      });
+    
+      $("#FallTheme").click(function() {
+          $("body").css("background-color","#eb6b00"); 
+          $("h1").css({
+            "color" : "#630000", 
+            "text-shadow" : "3px 3px #f8e4ff"
+          });
+          $(".accordion").css({
+            "background-color" : "#3f7f3f",
+            "color" : "#ffffff"
+          }); 
+      });
+        
+        
+      $("#Reset").click(function() {
+          location.reload();                
+      });
+    
+  });
+  
+  
+</script>
+
+</body>
+</html>
