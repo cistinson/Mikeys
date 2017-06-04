@@ -2,8 +2,10 @@
 <html>
   <head>
     <title>Welcome to Mikey's!</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Black+Ops+One" rel="stylesheet">
+    <link href="jquery.bxslider/jquery.bxslider.css" rel="stylesheet" />
 
     <style>
       
@@ -97,19 +99,7 @@
       #menuTable h2{
         border-bottom: solid black 2px;
       }
-      
-      footer{
-        text-align: center;
-        padding:0.5rem 0;
-        font-size:0.9rem;
-        border-top: 2px solid black;        
-      }
-      
-      footer i{
-        padding: 0 0.5rem;
-        color:black;
-      }
-      
+            
       h1{
         font-family: 'Black Ops One', cursive;
         font-size: 8rem;
@@ -120,6 +110,14 @@
         line-height: 7rem;
       }
       
+      #about{
+        font-size: 3.5rem;
+        padding: 0;
+        margin: 0;
+        line-height: normal;
+        text-shadow: 1.5px 1.5px #35b729;
+      }
+      
       h3, h2{
         margin: 0;
       }
@@ -127,6 +125,12 @@
       h2{
         text-align: center;
         padding: 0.5rem 0;
+      }
+      
+      p{
+        text-align: center;
+        margin-top: 0;
+        font-size: 1.5rem;
       }
       
       .menuDescription{
@@ -203,6 +207,25 @@
         padding: 1rem;
       }
       
+      .Themes{
+        margin-top: 0.5rem;
+      }
+      
+     footer{
+        text-align: center;
+        padding:0.5rem 0;
+        border-top: 2px solid black;        
+      }
+      
+      footer p{
+        font-size: 0.9rem;
+      }
+      
+      footer i{
+        padding: 0.5rem;
+        color:black;
+      }
+      
       #themes button{
         padding: 0.75rem;
         font-family: 'Righteous', cursive;
@@ -239,11 +262,11 @@
          }
        }
       
-      @media only screen and (max-width: 980px) and (min-width: 550px) {
+      @media only screen and (max-width: 980px) and (min-width: 650px) {
         .imagePanel img{
           width: 49%;
           margin: 0.1rem;
-          display: inline-block;
+          display: inline-block;          
         }
         
         iframe{
@@ -256,15 +279,40 @@
           width: 100%;
           clear: both;
           padding: 0.2rem;
-        }          
+        }
+        
+        h1{
+          font-size: 5rem;
+          line-height: 5rem;
+        }
+        
+        #about{
+          font-size: 3.2rem;
+        }
+        
       } 
       
-      @media only screen and (max-width: 550px) and (min-width: 100px) {
+      @media only screen and (max-width: 650px) and (min-width: 100px) {
         .imagePanel img{
           width: 99%;
           margin: 0;
           display: inline-block;
-        }      
+        }
+        
+        h1{
+          font-size: 4.4rem;
+          line-height: 3.5rem;
+        }
+        
+        #about{
+          font-size: 3rem;
+          line-height: 3rem;
+        }
+        
+        p{
+          font-size: 1rem;
+        }
+        
        }       
       }
       
@@ -274,15 +322,15 @@
   <div id="bodyDiv">
     <h1>MIKEY'S GYROS</h1>
     
-    <div id="themes">
-      <button id="WinterTheme" class="Themes">Winter</button>
-      <button id="SpringTheme" class="Themes">Spring</button>
-      <button id="SummerTheme" class="Themes">Summer</button>
-      <button id="FallTheme" class="Themes">Fall</button>
-      <button id="Reset" class="Themes">Reset</button>
-    </div>
+    <ul class="bxslider">
+      <li><img src="BannerImages/Banner1_1900x450_altered.png" /></li>
+      <li><img src="BannerImages/Banner2_1900x450_altered.png" /></li>
+      <li><img src="BannerImages/Banner3_1900x450_altered.png" /></li>
+      <li><img src="BannerImages/Banner4_1900x450_altered.png" /></li>
+      <li><img src="BannerImages/Banner5_1900x450_altered.png" /></li>           
+    </ul>
     
-    <div data-slider-id="zbpqui"></div>
+    <h1 id="about">About Us</h1>
     
     <p>We started Mikey's in Moscow, ID in 1995.  Since then our priority has always been to provide our customers with high quality, fresh and healthy food, served in a fast and friendly manner – offered at a competitive price point.  Our menu selections reflect the authentic Mediterranean food with a relaxed atmosphere which has made us favorite with the local residents. We hope you’ll join us for lunch or dinner and become part of our family.</p>
 
@@ -440,15 +488,15 @@
 
     <button class="accordion"><i class="fa fa-camera" aria-hidden="true"></i>Pictures</button>
     <div class="panel imagePanel">
-      <img src="Other%20Images/gyro.jpg"/>
-      <img src="Other%20Images/kebabs.jpg"/>
-      <img src="Other%20Images/Plate.jpg"/>
-      <img src="Other%20Images/sauce.jpg"/>
-      <img src="Other%20Images/Platter.jpg"/>
-      <img src="Other%20Images/wrap.jpg"/>
-      <img src="Other%20Images/baklava.jpg"/>
-      <img src="Other%20Images/cheesecake.jpg"/>
-      <img src="Other%20Images/coffee.jpg"/>      
+      <img src="OtherImages/gyro.jpg"/>
+      <img src="OtherImages/kebabs.jpg"/>
+      <img src="OtherImages/Plate.jpg"/>
+      <img src="OtherImages/sauce.jpg"/>
+      <img src="OtherImages/Platter.jpg"/>
+      <img src="OtherImages/wrap.jpg"/>
+      <img src="OtherImages/baklava.jpg"/>
+      <img src="OtherImages/cheesecake.jpg"/>
+      <img src="OtherImages/coffee.jpg"/>      
     </div>
 
     <button class="accordion"><i class="fa fa-question-circle" aria-hidden="true"></i>Contact Us</button>
@@ -473,6 +521,15 @@
     </div>
     
     <footer>
+    
+          <div id="themes">
+            <h3>Optional Themes:</h3>
+            <button id="WinterTheme" class="Themes">Winter</button>
+            <button id="SpringTheme" class="Themes">Spring</button>
+            <button id="SummerTheme" class="Themes">Summer</button>
+            <button id="FallTheme" class="Themes">Fall</button>
+            <button id="Reset" class="Themes">Reset</button>
+          </div>      
           <a href="https://www.facebook.com/Mikeys-Gyros-244543068060/" target="_blank"><i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i></a>
           <a href="https://www.yelp.com/biz/mikeys-greek-gyros-moscow" target="_blank"><i class="fa fa-yelp fa-2x" aria-hidden="true"></i></a>
           <a href="http://www.imgrum.org/place/mikey-s-gyros/9125319" target="_blank"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a>
@@ -482,14 +539,18 @@
     
 </div>
 
-<script type="text/javascript" src="http://app.sliderui.com/sliders/zbpqui.js"></script>
-<script src="https://use.fontawesome.com/0aebed106c.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  
+<script src="jquery.bxslider/jquery.bxslider.min.js"></script>
+<script src="https://use.fontawesome.com/0aebed106c.js"></script>  
 <script>
   
   $(document).ready(function() {
     
+    $('.bxslider').bxSlider({
+      auto: true,
+      speed: 700,
+      infiniteLoop: true,
+      pause: 5000
+    });
 
     var acc = document.getElementsByClassName("accordion");
     var i;
